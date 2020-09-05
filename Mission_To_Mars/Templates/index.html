@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <style>
+
+    div.card {
+          margin-top: 50px;
+      }
+
+    .carousel-inner img {
+    width: 100%;
+    height: 100%;
+    }
+
+    .carousel_caption {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    body {
+        background-color: rgba(76, 70, 50, 0.1);
+    }
+
+    body {
+
+        text-align: center;
+
+    }
+
+    .card {
+        display:inline-block;
+    }   
+  </style>
+</head>
+
+<body>
+    <div class ="container mt-3">
+    <div id="mars" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#mars" data-slide-to="0" class="active"></li>
+          <li data-target="#mars" data-slide-to="1"></li>
+          <li data-target="#mars" data-slide-to="2"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src= "https://thumbs-prod.si-cdn.com/4YFSMs6_GpocadQ_kju9qRe9Qz4=/fit-in/1600x0/https://public-media.si-cdn.com/filer/6e/55/6e552d6b-0ae5-4a63-b72c-22484f00f890/mars.jpg" alt="Featured Image" width="1100" height="500">
+            <div class="carousel-caption">
+            <h3 class="display-2">Mission To Mars</h3>
+            <a button type="button" class="btn btn-outline-light btn-lg" href="/scrape" role="button">Scrape New Data</button>
+            </a>
+          </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://thumbs-prod.si-cdn.com/4YFSMs6_GpocadQ_kju9qRe9Qz4=/fit-in/1600x0/https://public-media.si-cdn.com/filer/6e/55/6e552d6b-0ae5-4a63-b72c-22484f00f890/mars.jpg" alt="carousel image" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.insider.com/5d24c2d4a17d6c0c722860c3?width=1100&format=jpeg&auto=webp" alt="carousel image" width="1100" height="500">
+          </div>
+        </div>
+        
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#mars" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#mars" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+
+
+    <div class="container">
+    <div class="row" id="mars-data">
+        <div class="card bg-light">
+            <div class="card-body"><h1>Latest Mars News</h1><br> 
+            <h4 style="text-align:left;">{{mars.Title}}</h4><br>
+            <p style="text-align:left;">{{mars.Paragraph}}</p></br>
+            </div>
+        </div>
+        </div><br><br>
+        <h1> Featured Mars Image</h1><br><br>
+        <img src= {{mars.Featured_Image}} width="500">
+        
+    
+    
+    
+
+    <div class="card bg-light">
+        <div class="card-body"><h1>Current Weather on Mars</h1><br> 
+        <p style="text-align:left;">{{mars.Weather}}</p><br>
+        
+        </div>
+    </div>
+    </div><br><br>
+    </div>
+    </div></br>
+        <div class="container">
+            <h1>Twitter</h1>
+            <div class="panel panel-default">
+              <div class="panel-heading">Twitter</div>
+              <div class="panel-body">{{ mars.Weather }} </div>
+            </div>
+          </div></br>
+
+         <h1>Mars Facts</h1></br>
+        {{mars.Facts | safe}}
+      </div>
+
+      <div class="container">
+          <h1>Mars Hemispheres</h1>
+     
+        {% for title in mars.Hemispheres %}
+        
+        <div class="w3-container">
+            <div class="w3-card-4" style="width:100%">
+              <img src={{ title.img_url }} alt="Alps" width="500">
+              <div class="w3-container w3-center">
+                <p>{{ title.Title }}</p>
+              </div>
+            </div>
+        </div>
+          {% endfor %}
+     </div>
+     </div>
+    </div>
+</div>
+----------------------------------------------------
+<div class="container">
+    <h2>Mars Hemispheres</h2>
+    
+    <div class="card-columns">
+      <div class="card bg-light">
+        <div class="card-body text-center">
+          
+          <p class="card-text"></p>
+        </div>
+      </div>
+      <div class="card bg-light">
+        <div class="card-body text-center">
+          <p class="card-text">Some text inside the second card</p>
+        </div>
+      </div>
+      <div class="card bg-light">
+        <div class="card-body text-center">
+          <p class="card-text">Some text inside the third card</p>
+        </div>
+      </div>
+      <div class="card bg-light">
+        <div class="card-body text-center">
+          <p class="card-text">Some text inside the fourth card</p>
+        </div>
+      </div>  
+  
+    </div>
+  </div>
+  
+
+       
+      
+    </div>
+
+  </div>
+</body>
+
+</html>
+
