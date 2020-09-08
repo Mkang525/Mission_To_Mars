@@ -14,12 +14,31 @@
   <style>
 
     div.card {
-          margin-top: 50px;
-      }
+        margin-top: 50px;
+        margin-left:auto;
+        margin-right:auto;
+        padding: 50px;
+    }
+
+    .card-columns {
+        margin-left: 300px;
+        margin-right:auto;
+    }
 
     .carousel-inner img {
-    width: 100%;
-    height: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
+    .carousel-item{
+        width: 100%; /*width you want*/
+        height: 500px; /*height you want*/
+        overflow: hidden;
+    }
+    .carousel-item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .carousel_caption {
@@ -30,22 +49,31 @@
 
     body {
         background-color: rgba(76, 70, 50, 0.1);
+        text-align: center;
     }
 
-    body {
-
+    h1 {
         text-align: center;
-
+        margin-top: 50px;
     }
 
     .card {
         display:inline-block;
     }   
+
+    .figure {
+        margin-left: 100px;
+    }
+
+    #hemispheres {
+        margin-left: 275px;
+    }
+
   </style>
 </head>
 
 <body>
-    <div class ="container mt-3">
+<div class ="container mt-3">
     <div id="mars" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators -->
@@ -66,10 +94,21 @@
           </div>
           </div>
           <div class="carousel-item">
-            <img src="https://thumbs-prod.si-cdn.com/4YFSMs6_GpocadQ_kju9qRe9Qz4=/fit-in/1600x0/https://public-media.si-cdn.com/filer/6e/55/6e552d6b-0ae5-4a63-b72c-22484f00f890/mars.jpg" alt="carousel image" width="1100" height="500">
-          </div>
+            <img src="https://media1.s-nbcnews.com/j/newscms/2020_32/3402400/200805-mars-ripples-nasa-jm-1534_d591ce918d68693f8bac0cd91ea4b7e3.fit-760w.jpg" alt="carousel image" width="1100" height="500">
+            <div class="carousel-caption">
+                <h5>Sand dunes and ripples in Proctor Crater, Original from NASA. </h5>
+                <h6>Digitally enhanced by rawpixel.</h6>
+        </div>
+        </div>
           <div class="carousel-item">
-            <img src="https://i.insider.com/5d24c2d4a17d6c0c722860c3?width=1100&format=jpeg&auto=webp" alt="carousel image" width="1100" height="500">
+            <img src="https://static.dezeen.com/uploads/2019/07/harvard-university-scientists-develop-greenhouse-shields-growing-food-on-mars-hero-852x479.jpg" alt="carousel image" width="1100" height="500">
+            <div class="carousel-caption">
+                <h5>Scientists develop "Greenhouse Shields" to grow food on Mars</h5>
+                <h6>Image courtesy of Shutterstock</h6>
+                
+                
+                
+            </div>
           </div>
         </div>
         
@@ -84,97 +123,61 @@
 </div>
 
 
-    <div class="container">
+<div class="container">
     <div class="row" id="mars-data">
         <div class="card bg-light">
-            <div class="card-body"><h1>Latest Mars News</h1><br> 
+            <div class="card-body"><h2 style="text-shadow: 2px 2px 6px black;">Latest Mars News</h2><br> 
             <h4 style="text-align:left;">{{mars.Title}}</h4><br>
             <p style="text-align:left;">{{mars.Paragraph}}</p></br>
             </div>
         </div>
-        </div><br><br>
-        <h1> Featured Mars Image</h1><br><br>
-        <img src= {{mars.Featured_Image}} width="500">
-        
-    
-    
-    
-
-    <div class="card bg-light">
-        <div class="card-body"><h1>Current Weather on Mars</h1><br> 
-        <p style="text-align:left;">{{mars.Weather}}</p><br>
-        
         </div>
-    </div>
-    </div><br><br>
-    </div>
-    </div></br>
-        <div class="container">
-            <h1>Twitter</h1>
-            <div class="panel panel-default">
-              <div class="panel-heading">Twitter</div>
-              <div class="panel-body">{{ mars.Weather }} </div>
-            </div>
-          </div></br>
-
-         <h1>Mars Facts</h1></br>
-        {{mars.Facts | safe}}
-      </div>
-
-      <div class="container">
-          <h1>Mars Hemispheres</h1>
-     
-        {% for title in mars.Hemispheres %}
+        <h1 style="text-shadow: 2px 2px 6px black;"> FEATURED MARS IMAGE</h1><br><br>
+        <img src= {{mars.Featured_Image}} width="1100">
         
-        <div class="w3-container">
-            <div class="w3-card-4" style="width:100%">
-              <img src={{ title.img_url }} alt="Alps" width="500">
-              <div class="w3-container w3-center">
-                <p>{{ title.Title }}</p>
+    <div class = "row">
+        <div class="card-columns">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <h3 class="card-text" style="text-shadow: 2px 2px 6px black;">Current Weather on Mars</h3>
+                <p> {{ mars.Weather }} </p><br>
               </div>
             </div>
-        </div>
-          {% endfor %}
-     </div>
-     </div>
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <h3 class="card-text" style="text-shadow: 2px 2px 6px black;">Mars Facts</h3>
+                <p> {{ mars.Facts | safe}} </p><br>
+              </div>
+            </div>
+        </div>    
+    </div>
     </div>
 </div>
-----------------------------------------------------
-<div class="container">
-    <h2>Mars Hemispheres</h2>
-    
-    <div class="card-columns">
-      <div class="card bg-light">
-        <div class="card-body text-center">
-          
-          <p class="card-text"></p>
-        </div>
-      </div>
-      <div class="card bg-light">
-        <div class="card-body text-center">
-          <p class="card-text">Some text inside the second card</p>
-        </div>
-      </div>
-      <div class="card bg-light">
-        <div class="card-body text-center">
-          <p class="card-text">Some text inside the third card</p>
-        </div>
-      </div>
-      <div class="card bg-light">
-        <div class="card-body text-center">
-          <p class="card-text">Some text inside the fourth card</p>
-        </div>
-      </div>  
+
+
+<h1 style="text-shadow: 2px 2px 6px black;">MARS HEMISPHERES</h1><hr><br><br>
+<div class="row" id="hemispheres">
+     
+    {% for title in mars.Hemispheres %}
+    <figure class="col-xs-6">   
+    <img  class ="figure-image col-xs-12" src={{title.img_url}} alt=""width="350" style="padding:10px;" >
+    <figcaption><p text-align="center" style="font-family:'Lucida Sans',sans-serif">{{title.Title}}</p> </figcaption>
+    </figure>        
+    {% endfor %}   
+    {% block body %}{% endblock %}   
+</div>    
+
+
+
+
   
-    </div>
-  </div>
+    
+
   
 
        
       
-    </div>
-
-  </div>
+  
 </body>
 
 </html>
