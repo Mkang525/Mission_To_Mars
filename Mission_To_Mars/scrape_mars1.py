@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 from splinter import Browser
 from bs4 import BeautifulSoup
 import os
@@ -11,16 +5,9 @@ import requests
 import pymongo
 import pandas as pd
 
-
-# In[3]:
-
-
 def init_browser():
     executable_path = {"executable_path": "chromedriver.exe"}
     return Browser("chrome", **executable_path, headless=False)
-
-
-# In[4]:
 
 
 def scrape():
@@ -112,11 +99,6 @@ def scrape():
     
     return mars_data
 
-
-    
-
-
-# In[ ]:
 
 
 
