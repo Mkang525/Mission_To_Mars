@@ -2,7 +2,11 @@
 <br>
 <ul>
   <li> For initial scraping of websites, I used Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter, and then assigned the text to variables </li>
-  <li> Scrape the NASA Mars News Site and collect the latest News Title and Paragraph Text. Assign the text to variables that you can reference later.
+  <li> Websites scraped: <br>
+    <a href="https://mars.nasa.gov/news/" target="blank"> Nasa Mars News Site <br>
+    https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars<br>
+    https://twitter.com/marswxreport
+    
 
 
 
