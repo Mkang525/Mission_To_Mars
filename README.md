@@ -16,4 +16,6 @@
 <ol>
   <li>Clone this repository to your computer</li>
   <li>In your console, change directories to the location of the repository in your computer and run the flask app by entering 'python app.py' </li>
-</ol>
+</ol><br><br>
+
+<img src="snapshot_1_of_4.PNG">
