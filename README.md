@@ -13,6 +13,7 @@
 
 
 <h2><b>To open web application:</b></h2>
-<ol type = “1”>
-  <li>Clone this repository to your computer
-  <li>In your console, change directories to the location of the repository in your computer and run the flask app by entering 'python app.py' 
+<ol>
+  <li>Clone this repository to your computer</li>
+  <li>In your console, change directories to the location of the repository in your computer and run the flask app by entering 'python app.py' </li>
+</ol>
