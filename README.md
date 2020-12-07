@@ -18,4 +18,7 @@
   <li>In your console, change directories to the location of the repository in your computer and run the flask app by entering 'python app.py' </li>
 </ol><br><br>
 
-<img src="snapshot_1_of_4.PNG">
+<img src="snapshot_1_of_4.PNG"><br>
+<img src="snapshot_2_of_4.PNG"><br>
+<img src="snapshot_3_of_4.PNG"><br>
+<img src="snapshot_4_of_4.PNG"><br>
