@@ -13,3 +13,5 @@
 
 
 <h2><b>To open web application:</b></h2>
+<ol>
+  <li>Clone this repository to your computer
